@@ -1,0 +1,28 @@
+<DataWarehouse>
+	<!--DuelingDemos/-->
+	<DataObject Name="DuelingDemos" Type="Mod" Id="15138093994365797925" Version="1">
+		<DataProperty Name="m_description" Type="Object">
+			<DataValue Name="util::ReflectLocString">13300422692385395843</DataValue>
+			<!--DuelingDemos/util::ReflectLocString/-->
+			<DataObject Name="" Type="util::ReflectLocString" Id="13300422692385395843" OwnerId="15138093994365797925">
+				<DataProperty Name="m_modPart2" Type="UInt32" Value="2362476986"/>
+				<DataProperty Name="m_modPart3" Type="UInt32" Value="45391001"/>
+				<DataProperty Name="m_modPart0" Type="UInt32" Value="3962794657"/>
+				<DataProperty Name="m_modPart1" Type="UInt32" Value="1242608686"/>
+				<DataProperty Name="m_locStringKey" Type="Int32" Value="2"/>
+			</DataObject>
+		</DataProperty>
+		<DataProperty Name="m_name" Type="Object">
+			<DataValue Name="util::ReflectLocString">15197034630245790739</DataValue>
+			<!--DuelingDemos/util::ReflectLocString/-->
+			<DataObject Name="" Type="util::ReflectLocString" Id="15197034630245790739" OwnerId="15138093994365797925">
+				<DataProperty Name="m_modPart2" Type="UInt32" Value="2362476986"/>
+				<DataProperty Name="m_modPart3" Type="UInt32" Value="45391001"/>
+				<DataProperty Name="m_modPart0" Type="UInt32" Value="3962794657"/>
+				<DataProperty Name="m_modPart1" Type="UInt32" Value="1242608686"/>
+				<DataProperty Name="m_locStringKey" Type="Int32" Value="1"/>
+			</DataObject>
+		</DataProperty>
+	</DataObject>
+</DataWarehouse>
+
