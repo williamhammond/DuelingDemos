@@ -1,0 +1,89 @@
+function Mod_SetupObjective()
+	
+	-- Check if an objective has not been created yet
+	if _mod.objective == nil then 
+		
+		-- Create and store objective in the global table created at the start of this script
+		_mod.objective = Obj_Create(localPlayer.id, _mod.objective_title, Loc_Empty(), _mod.icons.objective, "ConquestObjectiveTemplate", localPlayer.raceName, OT_Primary, 0, "conquestObj")		
+		
+		-- Sets the objective's state to incomplete
+		Obj_SetState(_mod.objective, OS_Incomplete)
+		-- Sets the objective to visible so players can see it
+		Obj_SetVisible(_mod.objective, true)
+		-- Sets the progress element of the objective to visible so players can see it
+		Obj_SetProgressVisible(_mod.objective, true)		
+		-- Sets the objective progress type to a counter
+		Obj_SetCounterType(_mod.objective, COUNTER_CountUpTo)
+		-- Set the starting objective progress to 1 because we spawn a House for the player in Mod_SpawnBuilding()
+		Obj_SetCounterCount(_mod.objective, 1)
+		-- Set the maximum objective progress
+		Obj_SetCounterMax(_mod.objective, _mod.objective_requirement)
+		-- Set the objective progress bar percentage value
+		Obj_SetProgress(_mod.objective, 1 / _mod.objective_requirement)
+	end
+end
+
+function Mod_WinnerPresentation(playerID)
+	
+	-- If player is local
+	if playerID == localPlayer.id then
+		
+		-- Clear player's selection
+		Misc_ClearSelection()
+		-- Hide UI
+		Taskbar_SetVisibility(false)		
+		-- Set Win Condition Objective to complete
+		Obj_SetState(_mod.objective, OS_Complete)
+
+		-- Trigger objective complete pop up
+		Obj_CreatePopup(_mod.objective, _mod.objective_title)
+		-- Play Victory sfx
+		Music_PlayStinger(MUS_STING_PRIMARY_OBJ_COMPLETE)
+		-- Set objective to invisible
+		Obj_SetVisible(_mod.objective, false)
+		
+		-- Create Victory Stinger
+		Rule_AddOneShot(_gameOver_message, 
+			GAMEOVER_OBJECTIVE_TIME, { 
+			_playerID = playerID, 
+			_icon = _mod.icons.objective, 
+			_endType = Loc_GetString(11161277), 					-- "VICTORY"  
+			_message = Loc_Empty(),
+			_sound = "mus_stinger_landmark_objective_complete_success", 
+			_videoURI = "stinger_victory" 
+		})
+	end
+end
+
+-- Defeat Presentation
+-- This creates the large "Defeat" stinger that animates for losing players at the end of a match
+function Mod_LoserPresentation(playerID)
+	
+	-- If player is local
+	if playerID == localPlayer.id then
+		
+		-- Clear player's selection
+		Misc_ClearSelection()
+		-- Hide UI
+		Taskbar_SetVisibility(false)		
+		-- Set Win Condition Objective to failed
+		Obj_SetState(_mod.objective, OS_Failed)
+
+		-- Trigger objective complete pop up
+		Obj_CreatePopup(_mod.objective, _mod.objective_title)
+		-- Play Victory sfx
+		Music_PlayStinger(MUS_STING_PRIMARY_OBJ_FAIL)
+		-- Set objective to invisible
+		Obj_SetVisible(_mod.objective, false)
+
+		-- Create Defeat Stinger
+		Rule_AddOneShot(_gameOver_message, 
+			GAMEOVER_OBJECTIVE_TIME, {
+				_playerID = playerID, 
+				_icon = _mod.icons.objective, 
+				_endType = Loc_GetString(11045235), 					-- "DEFEAT"  
+				_message = Loc_Empty(),
+				_sound = "mus_stinger_landmark_objective_complete_fail", 
+			_videoURI = "stinger_defeat"})
+	end
+end

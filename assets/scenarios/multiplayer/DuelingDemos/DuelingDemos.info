@@ -11,57 +11,57 @@ HeaderInfo =
 		{
 			ebp_name = "starting_position_shared_territory",
 			owner_id = 1000,
-			x = -353.50000,
-			y = -196.50000,
+			x = -307.62158,
+			y = -90.54529,
 		},
 		 
 		{
 			ebp_name = "starting_position_shared_territory",
 			owner_id = 1001,
-			x = 234.50000,
-			y = -128.50000,
+			x = 221.74332,
+			y = -81.80630,
 		},
 		 
 		{
 			ebp_name = "starting_position_shared_territory",
 			owner_id = 1002,
-			x = -354.50000,
-			y = -239.50000,
+			x = -310.17908,
+			y = -323.56689,
 		},
 		 
 		{
 			ebp_name = "starting_position_shared_territory",
 			owner_id = 1003,
-			x = 236.50000,
-			y = -347.50000,
+			x = 221.44437,
+			y = -306.02017,
 		},
 		 
 		{
 			ebp_name = "starting_position_shared_territory",
 			owner_id = 1004,
-			x = -353.50000,
-			y = 199.50000,
+			x = -316.44070,
+			y = 116.27054,
 		},
 		 
 		{
 			ebp_name = "starting_position_shared_territory",
 			owner_id = 1005,
-			x = 234.50000,
-			y = 91.50000,
+			x = 220.86771,
+			y = 135.16579,
 		},
 		 
 		{
 			ebp_name = "starting_position_shared_territory",
 			owner_id = 1006,
-			x = -303.50000,
-			y = 241.50000,
+			x = -310.29935,
+			y = 353.13971,
 		},
 		 
 		{
 			ebp_name = "starting_position_shared_territory",
 			owner_id = 1007,
-			x = 235.50000,
-			y = 309.50000,
+			x = 221.09727,
+			y = 370.61118,
 		},
 	},
 	scenario_type = 1,
